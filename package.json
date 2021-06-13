@@ -3,9 +3,7 @@
     "version": "0.0.1",
     "keywords": [
         "modify",
-        "filepath",
-        "path",
-        "edit"
+        "filepath"
     ],
     "description": "A convenient way for changing parts of filepath.",
     "author": "Yuri Yaryshev",
@@ -28,7 +26,7 @@
         "registry": "http://registry.npmjs.org"
     },
     "scripts": {
-        "test": "jest --config=jest.config-ts.cjs --passWithNoTests",
+        "start": "node lib/cjs/start.js",
         "precompile": "inprint && ycplmon2 fix src && eslint src --fix --quiet",
         "precompile_full": "npm run precompile && prettier src --write",
         "clean:cjs": "yb clean_cjs",
@@ -49,6 +47,7 @@
         "build": "npm run precompile_full && npm run clean && npm run build:esm && npm run build:cjs && npm run build:types && npm run lint && npm run test && npm run build:docs",
         "test:cjs": "npm run build:cjs && jest --config=jest.config-cjs.cjs --passWithNoTests",
         "test:ts": "jest --config=jest.config-ts.cjs --passWithNoTests",
+        "test": "jest --config=jest.config-ts.cjs --passWithNoTests",
         "tsc": "npm run build:ts",
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
         "republish": "npm run build && npx version-select && yb genprojmeta && npm publish",

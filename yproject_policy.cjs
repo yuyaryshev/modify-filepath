@@ -1,6 +1,5 @@
-module.exports.policy = "ytslib_policy";
-module.exports.options = {
- exclude: [], // ignore specified directories and files during policy enforcement
- // policy options here
- testModuleImports:false,
+module.exports = {
+    policy: "ytslib_policy",
+    exclude: [] // ignore specified directories and files during policy enforcement
+    // policy options here
 }
