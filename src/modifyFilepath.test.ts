@@ -11,6 +11,11 @@ describe(`modifyFilepath.test.ts`, () => {
         expect(r).toEqual(`./4/file.ts`);
     });
 
+    it(`./file.ts  ==>  ./4/file_added.ts`, () => {
+        const r = modifyFilepath(`./file.ts`).addDir("4").addName("_added").done();
+        expect(r).toEqual(`./4/file_added.ts`);
+    });
+
     it(`d:\\1\\2/file.ts  ==>  d:/1/2/file.ts`, () => {
         const r = modifyFilepath(`d:\\1\\2/file.ts`).win();
         expect(r).toEqual(`d:/1/2/file.ts`);

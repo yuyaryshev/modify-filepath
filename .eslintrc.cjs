@@ -1,4 +1,4 @@
-const importantOnly = 0;
+const importantOnly = 1;
 const excludeDocs = 1;
 const keepDebug = 1;
 

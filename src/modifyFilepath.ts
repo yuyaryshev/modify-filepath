@@ -109,22 +109,22 @@ export function modifyFilepath(s: string) {
     }
 
     function changeName(newName: string) {
-        parsed.base = newName;
+        parsed.name = newName;
         return r;
     }
 
     function addName(nameSuffix: string) {
-        parsed.base += nameSuffix;
+        parsed.name += nameSuffix;
         return r;
     }
 
     function ensureNameSuffix(suffix: string) {
-        if (!parsed.base.endsWith(suffix)) parsed.base += suffix;
+        if (!parsed.name.endsWith(suffix)) parsed.name += suffix;
         return r;
     }
 
     function ensureNamePrefix(prefix: string) {
-        if (!parsed.base.startsWith(prefix)) parsed.base = prefix + parsed.base;
+        if (!parsed.name.startsWith(prefix)) parsed.name = prefix + parsed.name;
         return r;
     }
 
